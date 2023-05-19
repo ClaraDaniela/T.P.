@@ -7,7 +7,6 @@ private boolean estaReservado;
 private LinkedList<Reserva> reservas;
 
 public Estado_de_Reserva(boolean estaReservado, LinkedList<Reserva> reservas) {
-	super();
 	this.estaReservado = true;
 	this.reservas = reservas;
 }

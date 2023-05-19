@@ -15,7 +15,32 @@ public Fecha(int anio, int mes, int dia) {
 	validarDia(dia, mes, anio);
 	this.dia = dia;
 }
- private void validarDia(int dia, int mes, int anio) {
+
+ public int getDia() {
+	return dia;
+}
+
+public void setDia(int dia) {
+	this.dia = dia;
+}
+
+public int getMes() {
+	return mes;
+}
+
+public void setMes(int mes) {
+	this.mes = mes;
+}
+
+public int getAnio() {
+	return anio;
+}
+
+public void setAnio(int anio) {
+	this.anio = anio;
+}
+
+private void validarDia(int dia, int mes, int anio) {
 	 if(dia < 1 && dia > numDias(mes, anio)) {
 		 System.out.println("Dia no es valido.");
 	 }

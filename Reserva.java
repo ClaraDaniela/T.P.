@@ -8,14 +8,14 @@ public class Reserva {
 	private int numDePersonas;
 	//esta variable la hice porque necesitaba conectar habitacion con reserva
 	//para poder saber luego si esta ocupada la habitacion.
-	private int numHabitacion;
+	private Habitacion habitacion;
 	private LinkedList<Pasajero> pasajeros;
 	
-	public Reserva(Fecha fechahasta, Fecha fechadesde, int numDePersonas, int numHabitacion, LinkedList<Pasajero> pasajeros) {
+	public Reserva(Fecha fechahasta, Fecha fechadesde, int numDePersonas, Habitacion habitacion, LinkedList<Pasajero> pasajeros) {
 		this.fechahasta = fechahasta;
 		this.fechadesde = fechadesde;
 		this.numDePersonas = numDePersonas;
-		this.numHabitacion = numHabitacion;
+		this.habitacion = habitacion;
 		this.pasajeros = pasajeros;
 	}
 
@@ -43,14 +43,14 @@ public class Reserva {
 		this.numDePersonas = numDePersonas;
 	}
 	
-	public int getNumHabitacion() {
-		return numHabitacion;
+public Habitacion getHabitacion() {
+		return habitacion;
 	}
 
-	public void setNumHabitacion(int numHabitacion) {
-		this.numHabitacion = numHabitacion;
+	public void setHabitacion(Habitacion habitacion) {
+		this.habitacion = habitacion;
 	}
-	
+
 public LinkedList<Pasajero> getPasajeros() {
 		return pasajeros;
 	}

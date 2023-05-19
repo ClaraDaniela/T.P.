@@ -12,13 +12,8 @@ public class Menu_Principal {
 	        int opcion;
 	        //Bucle para pedir las opciones hasta que elijamos salir
 	        while (!salir) {
-	            //señore usuarie aqui tiene sus pinches opciones
-	            System.out.println("1. Reservar Habitacion");
-	           // System.out.println("2. Reservas hechas");
-	            /*System.out.println("3. Opcion 3");
-	            System.out.println("4. Opcion 4");
-	            System.out.println("5. Opcion 5");
-	            System.out.println("6. Opcion 6");*/
+	            //señore usuarie aqui tiene sus pinches opciones, que no son muchas
+	            System.out.println("1. Reservar Habitacion");	           
 	            System.out.println("7. Salir");
 
 	            try{
@@ -32,7 +27,7 @@ public class Menu_Principal {
 	                    case 1:
 	                        System.out.println("Reserva de Habitacion");
 	                       
-	                        LinkedList<Habitacion> habitaciones= new  LinkedList<Habitacion>();
+	                        Habitacion habitacion = new Habitacion(1, "5to piso", 2, "5 Estrellas");
 	                        //Hotel TuAbuela = new Hotel("Mendoza", habitaciones);
 	                       // Estado_de_Reserva.habitacionesDisponibles(TuAbuela.getHabitaciones();
 	                      
@@ -47,7 +42,7 @@ public class Menu_Principal {
 	                        System.out.println("Ingrese dia: ");
 	                        int dia = sc.nextInt(); 
 	                        Fecha fechadesde = new Fecha(anio, mes, dia);
-	                        
+	                        //esto nomas para pedir otra fecha, deo mio
 	                        System.out.println("Fecha Hasta");
 	                        System.out.println("Ingrese año: ");
 	                        int anio1 = sc.nextInt(); 
@@ -66,23 +61,29 @@ public class Menu_Principal {
 	                        System.out.println("Pasajeros");
 	                        LinkedList<Pasajero> pasajeros = new LinkedList<Pasajero>();
 	                        LinkedList<Reserva> reservas = new LinkedList<Reserva>();
+	                       
+	                        for(int i = 0; i < numDePersonas; i++){	  
 	                        System.out.println("Ingrese nombre de pasajero: ");
-	                        for(int i = 0; i < numDePersonas; i++){	          
 	                        String nombre = sc.nextLine();   
 	                        Pasajero pasajero = new Pasajero(nombre);
-	                        pasajeros.add(pasajero);
-	                        System.out.println("Ingrese nombre de pasajero: ");
+	                        pasajeros.add(pasajero);	                
 	                        }
-	                        Reserva reserva = new Reserva(fechadesde, fechahasta, numDePersonas, numDeHabitacion, pasajeros);
+	                        Reserva reserva = new Reserva(fechadesde, fechahasta, numDePersonas, habitacion, pasajeros);
 	                        reservas.add(reserva);
+	                        //a este objeto lo voy a usar mas adelante para saber el historial de reservas y por 
+	                        //si el cliente quiere cambiar la reserva o algo
 	                        Estado_de_Reserva estados = new Estado_de_Reserva(true, reservas);
+	                        
 	                        System.out.println("Reservas hechas");
-	                        for(Reserva estado: estados.getReservas()) {
-	                        System.out.println(estados.getReservas());
+	                        for(Reserva reser: reservas) {
+	                        System.out.println("Fecha desde: " + reser.getFechadesde().getDia() + "/" + reser.getFechadesde().getMes() + "/" + reser.getFechadesde().getAnio() + "\nFecha Hasta: " + reser.getFechahasta().getDia() + "/" + reser.getFechahasta().getMes() + "/" + reser.getFechahasta().getAnio() + "\nNumero de personas: " + reser.getNumDePersonas() + "\nHabitacion numero: " + reser.getHabitacion().getNumero_habitacion() + 
+	                        		"\nUbicacion de habitacion: " + reser.getHabitacion().getUbicacion() + "\nTipo de habitacion: " + reser.getHabitacion().getTipo());	                      
+	                        for(Pasajero pas: reser.getPasajeros()) {
+	                        	System.out.println("\nPasajeros: " + pas.getNombre());
 	                        }
-	                        if(reserva.getNumHabitacion() == habitaciones.getNumero_habitacion()) {
-	                        	System.out.println(habitaciones);
 	                        }
+	                       
+	                        
 	                   /* case 2:
 	                    	
 	                      
