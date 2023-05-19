@@ -5,7 +5,9 @@ public class Fecha {
  private int mes;
  private int anio;
  
-public Fecha(int dia, int mes, int anio) {
+public Fecha(int anio, int mes, int dia) {
+	//aca hay que fijarse en el orden, primero es el año para saber si es
+	//bisiesto, luego el mes para saber cuantos dias tiene
 	validarAnio(anio);
 	this.anio = anio;
 	validarMes(mes);

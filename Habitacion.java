@@ -36,20 +36,6 @@ public class Habitacion {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-	public Hotel getNombreHotel() {
-		return nombreHotel;
-	}
-	public void setNombreHotel(Hotel nombreHotel) {
-		this.nombreHotel = nombreHotel;
-	}
-	public Estado_de_Reserva getEstado() {
-		return estado;
-	}
-	public void setEstado(Estado_de_Reserva estado) {
-		this.estado = estado;
-	}
 	
-	
-	public 
 
 }
